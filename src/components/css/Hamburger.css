@@ -52,7 +52,6 @@ div.burger::after {
     content: "";
     top: 100%;
     width: 45px;
-    /* background-color: var(--itemsColor); */
 }
 
 .burger.active span,
