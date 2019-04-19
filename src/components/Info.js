@@ -17,7 +17,7 @@ const Info = props => {
   const dayBulid = (
     <>
       <div className="line" />
-      <div className="sunrise">
+      <div className={`sunrise ${props.class}`}>
         <FontAwesomeIcon icon={faSun} size="2x" className="sunriseIco" />
         <h4> sunrise </h4> <h2> {sunriseTime} </h2>{" "}
       </div>{" "}
@@ -40,7 +40,7 @@ const Info = props => {
   const nightBulid = (
     <>
       <div className="line" />
-      <div className={`sunrise ${props.class}`}>
+      <div className="sunrise">
         <FontAwesomeIcon icon={faSun} size="2x" className="sunriseIco" />
         <h4> sunrise </h4> <h2> {sunriseTime} </h2>{" "}
       </div>{" "}

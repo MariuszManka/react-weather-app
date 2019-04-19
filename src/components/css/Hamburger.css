@@ -1,135 +1,312 @@
-/* _______________________________GENERAL BULID___________________________ */
-nav.burger {
-    grid-area: burger;
-    margin: 3% 0 0 5%;
-    font-size: 1.2rem;
-    z-index: 7;
-    transition: all 0.2s;
+:root {
+    --black: #040404;
+    --itemsColor: #FFBF59;
+    --whiteTextColor: #f7f6f2;
+    --textFont: 'Montserrat', sans-serif;
 }
 
-nav.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 5;
-    background-color: #040404;
-    width: 100vw;
-    transition: all 0.2s;
-}
-
-nav.menu.active {
-    top: -100vh;
-}
-
-nav.menu input {
-    display: block;
-    border: none;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(45deg, #743ad5, #d53a9d);
-    border-image-slice: 1;
-    background-color: inherit;
+div.burger {
+    grid-area: menu;
+    width: 50px;
+    height: 40px;
     position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-    font-size: 2rem;
-    padding: 15px;
-    color: #FBFBFB;
-    outline: none;
-}
-
-.cancel {
-    color: #FBFBFB;
-    margin: 3% 0 0 5%;
-}
-
-.applay {
+    top: 5%;
+    left: 2%;
+    cursor: pointer;
     z-index: 10;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: inherit;
-    border: solid 4px transparent;
-    border-image: linear-gradient(45deg, #743ad5, #d53a9d);
-    border-image-slice: 1;
-    background: linear-gradient(45deg, #743ad5, #d53a9d);
-    padding: 10px 40px;
-    color: #FBFBFB;
-    font-size: 1.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    outline: none;
 }
 
-.warning {
-    color: #e74c3c;
+div.burger span,
+div.burger::before,
+div.burger::after {
+    display: block;
     position: absolute;
-    top: 80%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 5px;
+    background-color: var(--whiteTextColor);
+    width: 50px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.71, 0.02, 0.13, 1.66);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.day div.burger span,
+.day div.burger::before,
+.day div.burger::after {
+    background-color: var(--black);
+}
+
+div.burger span {
+    top: 50%;
+    width: 35px;
+}
+
+div.burger::before {
+    content: "";
+    top: 0;
+
+}
+
+div.burger::after {
+    content: "";
+    top: 100%;
+    width: 45px;
+    /* background-color: var(--itemsColor); */
+}
+
+.burger.active span,
+.burger.active::before,
+.burger.active::after {
+    background-color: var(--whiteTextColor);
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 100%;
+}
+
+.day .burger.active span,
+.day .burger.active::before,
+.day .burger.active::after {
+    background-color: var(--whiteTextColor);
+}
+
+div.burger.active::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+div.burger:hover span,
+div.burger:hover::after {
+    width: 100%;
+}
+
+.menu {
+    position: absolute;
+    list-style-type: none;
+    top: 0;
+    left: -100%;
+    background-color: #040404;
+    height: 100vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 3;
+    transition: all 0.3s cubic-bezier(1, 0.04, 0, 1);
+    font-size: 2rem;
+    z-index: 9;
+    letter-spacing: 3px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.menu a {
+    color: var(--whiteTextColor);
+}
+
+.menu.active {
+    left: 0;
+}
+
+/* _____________________________________________ */
+
+/* form starting stylings ------------------------------- */
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input {
+    font-family: var(--textFont);
+    font-size: 2rem;
+    padding: 30px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background-color: #040404;
+    color: var(--whiteTextColor);
     text-align: center;
 }
 
-/* ______________________________________________________________________ */
-
-/* _______________________________DAY BULID___________________________ */
-
-nav.burger.day {
-    color: #040404;
+input:focus {
+    outline: none;
 }
 
-/* _______________________________________________________________________ */
-
-/* _______________________________NIGHT BULID___________________________ */
-
-nav.burger.night {
-    color: #f5f6fa;
+/* LABEL ======================================= */
+label {
+    color: #757575;
+    font-size: 1.9rem;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 0;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
 }
 
-/* _______________________________________________________________________ */
-
-.shake {
-    animation: shake .4s linear;
+/* active state */
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: var(--itemsColor);
 }
 
-/* ________________________RESPONSIVE_________________________ */
-@media(orientation: landscape) {
-    nav.burger {
-        margin-top: 10px;
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--itemsColor);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: var(--itemsColor);
     }
 
-    .burger.night {
-        /* margin-top: 35px; */
-        grid-area: header;
-    }
-}
-
-@keyframes shake {
-
-    from,
     to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate(-50%, -50%) translate3d(0, 0, 0);
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: var(--itemsColor);
     }
 
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        -webkit-transform: translate3d(-10px, 0, 0);
-        transform: translate(-50%, -50%) translate3d(-10px, 0, 0);
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: var(--itemsColor)
     }
 
-    20%,
-    40%,
-    60%,
-    80% {
-        -webkit-transform: translate3d(10px, 0, 0);
-        transform: translate(-50%, -50%) translate3d(10px, 0, 0);
+    to {
+        width: 0;
+        background: transparent;
     }
+}
+
+/* _____________________________________________ */
+@media (orientation: portrait) {
+    div.burger {
+        top: 4%;
+        left: 5%;
+        width: 35px;
+        height: 25px;
+    }
+
+    .menu {
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        line-height: 3;
+        transition: all 0.3s cubic-bezier(1, 0.04, 0, 1);
+        font-size: 1.5rem;
+    }
+
+    .menu.active {
+        top: 0;
+    }
+
+    div.burger span,
+    div.burger::after,
+    div.burger::before {
+        width: 100%;
+        height: 4px;
+    }
+
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+    .menu {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    div.burger {
+        top: 5%;
+        left: 3%;
+        width: 30px;
+        height: 20px;
+    }
+
+    .menu {
+        top: 0;
+        left: -100%;
+        min-width: 100%;
+        line-height: 2.5;
+        font-size: 2.4rem;
+    }
+
+    div.burger span,
+    div.burger::after,
+    div.burger::before {
+        width: 100%;
+        height: 3px;
+    }
+
+}
+
+@media (max-width: 1500px) and (orientation: landscape) {
+    .menu {
+        font-size: 1.7rem;
+    }
+
 }

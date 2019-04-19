@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from "react";
+import React, { Component } from "react";
 import "./css/App.css";
 import Header from "./Header";
 import Info from "./Info";
@@ -13,7 +11,7 @@ const API_key = "6a3b29b7bab116e64a96371b7dfa2e20";
 class App extends Component {
   state = {
     date: "",
-    city: "Lubliniec",
+    city: "Warszawa",
     temp: "",
     sunrise: "",
     sunset: "",
@@ -21,7 +19,6 @@ class App extends Component {
     pressure: "",
     weather: "",
     error: false,
-    isMenuActive: false,
     value: ""
   };
 
@@ -47,7 +44,7 @@ class App extends Component {
         // const city = this.state.firstLoad ? "Lubliniec" : this.state.value;
         this.setState({
           date: time,
-          temp: data.main.temp,
+          temp: data.main.temp.toFixed(),
           wind: data.wind.speed.toFixed(),
           sunrise: data.sys.sunrise,
           sunset: data.sys.sunset,
@@ -71,8 +68,6 @@ class App extends Component {
   handleCityChange = e => {
     e.preventDefault();
 
-    console.log(e.target);
-
     const API = `http://api.openweathermap.org/data/2.5/weather?q=${
       this.state.value
     }&APPID=${API_key}&units=metric`;
@@ -92,7 +87,7 @@ class App extends Component {
           return {
             city: prevState.value,
             date: time,
-            temp: data.main.temp,
+            temp: data.main.temp.toFixed(),
             wind: data.wind.speed.toFixed(),
             sunrise: data.sys.sunrise,
             sunset: data.sys.sunset,
@@ -111,15 +106,6 @@ class App extends Component {
       });
   };
 
-  handleMenuActive = () => {
-    this.setState(prevState => {
-      return {
-        isMenuActive: !prevState.isMenuActive,
-        error: false
-      };
-    });
-  };
-
   handleInputChange = e => {
     this.setState({
       value: e.target.value
@@ -127,132 +113,45 @@ class App extends Component {
   };
 
   render() {
-    const actualTime = new Date().getTime(); //Pobieranie aktualnej daty jako liczby minisekund
+    const actualTime = new Date().getTime() / 1000; //Pobieranie aktualnej daty jako liczby minisekund
 
-    const {
-      temp,
-      isMenuActive,
-      value,
-      sunset,
-      weather,
-      error
-    } = this.state; //Destrukturyzacja
+    const { temp, isMenuActive, value, sunset, weather, error } = this.state; //Destrukturyzacja
 
-    const dayBulid = ( <
-      div className = "App day" >
-      <
-      Hamburger click = {
-        this.handleMenuActive
-      }
-      isActive = {
-        isMenuActive
-      }
-      text = {
-        value
-      }
-      change = {
-        this.handleInputChange
-      }
-      cityChange = {
-        this.handleCityChange
-      }
-      class = {
-        "day"
-      }
-      err = {
-        error
-      }
-      />{" "} <
-      Header info = {
-        this.state
-      }
-      class = {
-        "day"
-      }
-      /> <Image class={"day"} / > {
-        " "
-      } <
-      Temperature info = {
-        temp
-      }
-      weatherStatus = {
-        weather
-      }
-      class = {
-        "day"
-      }
-      />{" "} <
-      Info info = {
-        this.state
-      }
-      class = {
-        "day"
-      }
-      />{" "} < /
-      div >
+    const dayBulid = (
+      <div className="App day">
+        <Hamburger
+          text={value}
+          change={this.handleInputChange}
+          cityChange={this.handleCityChange}
+          classN={"day"}
+          err={error}
+        />{" "}
+        <Header info={this.state} class={"day"} /> <Image class={"day"} />{" "}
+        <Temperature info={temp} weatherStatus={weather} class={"day"} />{" "}
+        <Info info={this.state} class={"day"} />{" "}
+      </div>
     );
 
-    const nightBulid = ( <
-      div className = "App night" >
-      <
-      Hamburger click = {
-        this.handleMenuActive
-      }
-      isActive = {
-        isMenuActive
-      }
-      text = {
-        value
-      }
-      change = {
-        this.handleInputChange
-      }
-      cityChange = {
-        this.handleCityChange
-      }
-      class = {
-        "night"
-      }
-      err = {
-        error
-      }
-      />{" "} <
-      Header info = {
-        this.state
-      }
-      class = {
-        "night"
-      }
-      /> <Image class={"night"} / > {
-        " "
-      } <
-      Temperature info = {
-        temp
-      }
-      weatherStatus = {
-        weather
-      }
-      class = {
-        "night"
-      }
-      />{" "} <
-      Info info = {
-        this.state
-      }
-      class = {
-        "night"
-      }
-      />{" "} < /
-      div >
+    const nightBulid = (
+      <div className="App night">
+        <Hamburger
+          click={this.handleMenuActive}
+          isActive={isMenuActive}
+          text={value}
+          change={this.handleInputChange}
+          cityChange={this.handleCityChange}
+          classN={"night"}
+          err={error}
+        />{" "}
+        <Header info={this.state} class={"night"} /> <Image class={"night"} />{" "}
+        <Temperature info={temp} weatherStatus={weather} class={"night"} />{" "}
+        <Info info={this.state} class={"night"} />{" "}
+      </div>
     );
     if (actualTime <= sunset) {
-      return < > {
-        dayBulid
-      } < />;
+      return <> {dayBulid} </>;
     } else {
-      return < > {
-        nightBulid
-      } < />;
+      return <> {nightBulid} </>;
     }
   }
 }
