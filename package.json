@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mariuszmanka.github.io/react-weather-app/",
   "name": "pogoda-my-project",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +12,8 @@
     "react-scripts": "2.1.5"
   },
   "scripts": {
+    "predeploy": "npm run bulid",
+    "deploy": "gh-pages -d bulid",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
