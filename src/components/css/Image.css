@@ -1,0 +1,134 @@
+/* ___________________________GENERAL BULID____________________________ */
+
+div.image {
+    grid-area: image;
+    position: relative;
+}
+
+div.firstCloud {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+div.secondCloud {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+/* ______________________________________________________________________ */
+
+/* ___________________________DAY BULID____________________________ */
+
+.day .cloud {
+    color: #00a8ff;
+    animation: clouds 5s linear infinite alternate;
+}
+
+.day .firstCloud {
+    top: 70%;
+    left: 75%;
+}
+
+.day .secondCloud {
+    top: 15%;
+    left: 20%;
+}
+
+.image.day>.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: radial-gradient( circle, #f4b642, #f4c23a, #f2cf33, #eedc2d, #e7ea2a);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 14px 15px 78px -25px rgba(0, 0, 0, 0.75);
+}
+
+/* ______________________________________________________________________ */
+
+/* ___________________________NIGHT BULID____________________________ */
+
+div.image.night {
+    background: url("../img/darkness.png");
+}
+
+.night>.secondCloud {
+    top: 30%;
+    left: 75%;
+    font-size: 0.9rem;
+}
+
+.night>.firstCloud {
+    top: 75%;
+    left: 21%;
+}
+
+.image.night .cloud {
+    color: #ecf0f1;
+    animation: clouds 5s linear infinite alternate;
+}
+
+.image.night .moon {
+    color: #f7d709;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    animation: moon 3s linear infinite alternate;
+}
+
+/* ______________________________________________________________________ */
+
+/* ________________________RESPONSIVE_________________________ */
+
+@media (orientation: landscape) {
+    .image.day>.sun {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+    }
+    .day>.firstCloud {
+        top: 40%;
+        left: 70%;
+    }
+    .day>.secondCloud {
+        top: 60%;
+        left: 30%;
+    }
+    div.image.night {
+        background: none;
+    }
+    .image.night .moon {
+        font-size: 5rem;
+    }
+    .night>.secondCloud {
+        top: 40%;
+        left: 70%;
+        font-size: 0.9rem;
+    }
+    .night>.firstCloud {
+        top: 60%;
+        left: 30%;
+    }
+}
+
+@keyframes clouds {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.4);
+    }
+}
+
+@keyframes moon {
+    from {
+        transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-25deg);
+    }
+}

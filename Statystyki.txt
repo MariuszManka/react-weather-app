@@ -1,0 +1,16 @@
+﻿Godziny sp�dzone na projekcie:
+
+Pi�tek: 2h
+Sobota: 2,5h
+Niedziela: 4,5h
+Poniedziałek: 3,5h
+Wtorek: 3h
+
+
+Razem: 15,5h
+
+//______________________________________________//
+Dodaj animację ERROR: 
+>podkreślenie inputa robi się czewone
+>Button dostaje animację "shake"
+>Czerwony napis "Nie ma takiego miasta"

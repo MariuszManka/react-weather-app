@@ -1,0 +1,65 @@
+/* _________________________GENERAL BULID________________________________ */
+div.temp {
+    grid-area: temp;
+    text-align: center;
+    font-size: 2rem;
+}
+
+div.temp h2 {
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
+}
+
+div.temp h2::after {
+    content: '';
+    height: 1.5px;
+    display: block;
+    grid-area: line;
+    background-color: #95a5a6;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.temp h2>span {
+    color: #41a9f4;
+    font-weight: bold;
+}
+
+/* ______________________________________________________________________ */
+
+
+/* _________________________DAY BULID________________________________ */
+.temp.day {
+    color: #040404;
+}
+
+.temp.day h2 {
+    color: #95a5a6;
+}
+
+/* ______________________________________________________________________ */
+
+/* _________________________NIGHT BULID________________________________ */
+.temp.night {
+    color: #f5f6fa;
+
+}
+
+.temp.night h2 {
+    color: #7f8c8d;
+}
+
+/* ______________________________________________________________________ */
+
+/* ____________________________RESPONSIVE_________________________________ */
+@media(orientation: landscape) {
+    .temp h2 {
+        display: none;
+    }
+
+    .temp h1 {
+        font-size: 3rem;
+    }
+
+
+}

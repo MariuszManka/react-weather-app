@@ -1,0 +1,37 @@
+.App {
+  display: grid;
+  grid-template-rows: 10% 15% 34% 20% 9px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "burger burger burger"
+    "header header header"
+    "image image image"
+    "temp temp temp"
+    "line line line"
+    "sun wind pressure";
+  height: 100vh;
+}
+
+.App.day {
+  background-color: #FBFBFB;
+}
+
+.App.night {
+  background-color: #040404;
+}
+
+@media(orientation: landscape) {
+  .App {
+    display: grid;
+    grid-template-rows: 25% 34% 20% 1fr;
+    grid-template-areas:
+      "header header header"
+      "image image image"
+      "temp temp temp"
+      "sun wind pressure";
+  }
+
+  body {
+    background-color: #040404;
+  }
+}

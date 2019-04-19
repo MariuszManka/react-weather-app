@@ -1,0 +1,135 @@
+/* _______________________________GENERAL BULID___________________________ */
+nav.burger {
+    grid-area: burger;
+    margin: 3% 0 0 5%;
+    font-size: 1.2rem;
+    z-index: 7;
+    transition: all 0.2s;
+}
+
+nav.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 5;
+    background-color: #040404;
+    width: 100vw;
+    transition: all 0.2s;
+}
+
+nav.menu.active {
+    top: -100vh;
+}
+
+nav.menu input {
+    display: block;
+    border: none;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(45deg, #743ad5, #d53a9d);
+    border-image-slice: 1;
+    background-color: inherit;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px;
+    color: #FBFBFB;
+    outline: none;
+}
+
+.cancel {
+    color: #FBFBFB;
+    margin: 3% 0 0 5%;
+}
+
+.applay {
+    z-index: 10;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: inherit;
+    border: solid 4px transparent;
+    border-image: linear-gradient(45deg, #743ad5, #d53a9d);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, #743ad5, #d53a9d);
+    padding: 10px 40px;
+    color: #FBFBFB;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.warning {
+    color: #e74c3c;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* ______________________________________________________________________ */
+
+/* _______________________________DAY BULID___________________________ */
+
+nav.burger.day {
+    color: #040404;
+}
+
+/* _______________________________________________________________________ */
+
+/* _______________________________NIGHT BULID___________________________ */
+
+nav.burger.night {
+    color: #f5f6fa;
+}
+
+/* _______________________________________________________________________ */
+
+.shake {
+    animation: shake .4s linear;
+}
+
+/* ________________________RESPONSIVE_________________________ */
+@media(orientation: landscape) {
+    nav.burger {
+        margin-top: 10px;
+    }
+
+    .burger.night {
+        /* margin-top: 35px; */
+        grid-area: header;
+    }
+}
+
+@keyframes shake {
+
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate(-50%, -50%) translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate(-50%, -50%) translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate(-50%, -50%) translate3d(10px, 0, 0);
+    }
+}

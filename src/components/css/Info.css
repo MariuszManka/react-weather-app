@@ -1,0 +1,77 @@
+div.sunrise {
+    grid-area: sun;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sunriseIco {
+    color: #f79809;
+}
+
+div.wind {
+    grid-area: wind;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.windIco {
+    color: #0ddce0;
+}
+
+div.pressure {
+    grid-area: pressure;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pressureIco {
+    color: #ed1e5c
+}
+
+div>h2 {
+    font-weight: normal;
+    line-height: 10vh;
+    text-align: center;
+}
+
+div>h4 {
+    color: #5D5D5D;
+}
+
+div.sunsetInfo.night {
+    grid-area: pressure;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.moonIco {
+    color: #f7d709;
+    transform: rotate(-15deg);
+}
+
+div.night h2 {
+    color: #f5f6fa;
+    background-color: #040404;
+}
+
+div.night h4 {
+    color: #7f8c8d;
+}
+
+/* ________________________RESPONSIVE_________________________ */
+@media(orientation: landscape) {
+
+    div.sunrise,
+    div.wind,
+    div.pressure {
+        margin-top: -10px;
+        overflow: hidden;
+    }
+
+    div.sunrise.night,
+    div.wind.night,
+    div.sunsetInfo.night {
+        margin-top: -10px;
+    }
+
+}
