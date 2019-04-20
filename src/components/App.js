@@ -25,7 +25,7 @@ class App extends Component {
   //__________________INICJALIZOWANIE DANYCH (POCZĄTKOWE MIASTO - LUBLINIEC_______________________//
 
   componentDidMount() {
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${
       this.state.city
     }&APPID=${API_key}&units=metric`;
 
