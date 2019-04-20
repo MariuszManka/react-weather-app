@@ -10,6 +10,7 @@
     "line line line"
     "sun wind pressure";
   height: 100vh;
+  overflow: hidden;
 }
 
 .App.day {
@@ -33,5 +34,6 @@
 
   body {
     background-color: #040404;
+    font-family: 'Montserrat', sans-serif;
   }
 }
