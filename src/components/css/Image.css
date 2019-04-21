@@ -22,7 +22,7 @@ div.secondCloud {
 
 .day .cloud {
     color: #00a8ff;
-    animation: clouds 5s linear infinite alternate;
+    animation: clouds 7s linear infinite alternate;
 }
 
 .day .firstCloud {
@@ -120,6 +120,7 @@ div.image.night {
         left: 30%;
     }
 }
+
 
 @keyframes clouds {
     from {

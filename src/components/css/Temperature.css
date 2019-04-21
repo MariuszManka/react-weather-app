@@ -63,3 +63,16 @@ div.temp h2::after {
 
 
 }
+
+@media(max-width: 350px) {
+
+    div.temp h2::after {
+        display: none;
+    }
+
+    div.temp {
+
+        font-size: 1.5rem;
+    }
+
+}

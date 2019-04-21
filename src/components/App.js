@@ -57,7 +57,7 @@ class App extends Component {
         console.log(error);
         this.setState(prevState => ({
           error: true,
-          city: "Lubliniec",
+          city: "Warszawa",
           value: ""
         }));
       });
@@ -93,7 +93,6 @@ class App extends Component {
             sunset: data.sys.sunset,
             pressure: data.main.pressure.toFixed(),
             weather: data.weather[0].description,
-            isMenuActive: !prevState.isMenuActive,
             value: ""
           };
         });

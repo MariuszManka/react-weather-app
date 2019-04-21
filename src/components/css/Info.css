@@ -75,3 +75,14 @@ div.night h4 {
     }
 
 }
+
+
+@media(max-width: 350px) {
+
+    div h2 {
+        font-size: 1.3rem;
+        line-height: 7vh;
+    }
+
+
+}

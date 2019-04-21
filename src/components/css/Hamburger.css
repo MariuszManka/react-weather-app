@@ -221,6 +221,12 @@ button.applay {
     letter-spacing: 2px;
     border-radius: 5px;
     font-weight: bold;
+    transition: border-color 0.2s ease-out;
+}
+
+button.applay.shake {
+    animation: shake .5s ease-out;
+    border-color: #db1547;
 }
 
 /* _____________________________________________ */
@@ -326,4 +332,31 @@ button.applay {
         width: 0;
         background: transparent;
     }
+}
+
+@keyframes shake {
+
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-7px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(7px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+
 }

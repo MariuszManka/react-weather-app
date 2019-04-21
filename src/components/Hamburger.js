@@ -8,6 +8,10 @@ class Hamburger extends Component {
   };
 
   handleMenuClick = () => {
+    const { err } = this.props;
+    // if (err === true) {
+    //   return;
+    // }
     this.setState(prevState => {
       return {
         isMenuActive: !prevState.isMenuActive
