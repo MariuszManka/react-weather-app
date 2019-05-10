@@ -4,6 +4,18 @@ div.sunrise {
     margin-top: 20px;
 }
 
+.sunrise,
+.wind,
+.pressure {
+    background-color: #FBFBFB;
+}
+
+.sunrise.night,
+.wind.night,
+.pressure.night {
+    background-color: #040404;
+}
+
 .sunriseIco {
     color: #f79809;
 }
@@ -30,9 +42,10 @@ div.pressure {
 
 div>h2 {
     font-weight: normal;
-    line-height: 10vh;
+    line-height: 9vh;
     text-align: center;
 }
+
 
 div>h4 {
     color: #5D5D5D;

@@ -45,15 +45,17 @@ const Info = props => {
   const nightBulid = (
     <>
       <div className="line" />
-      <div className="sunrise">
+      <div
+        className={`
+        sunrise ${props.class}
+        `}
+      >
         <FontAwesomeIcon icon={faSun} size="2x" className="sunriseIco" />
         <h4> sunrise </h4> <h2> {sunriseTime} </h2>{" "}
       </div>{" "}
       <div
         className={`
-        wind $ {
-          props.class
-        }
+        wind ${props.class}
         `}
       >
         <FontAwesomeIcon icon={faWind} size="2x" className="windIco" />
@@ -61,17 +63,13 @@ const Info = props => {
         <h2>
           {" "}
           {`
-        $ {
-          wind
-        }
+        ${wind}
         m / s `}{" "}
         </h2>{" "}
       </div>{" "}
       <div
         className={`
-        sunsetInfo $ {
-          props.class
-        }
+        sunsetInfo ${props.class}
         `}
       >
         {" "}
@@ -80,9 +78,7 @@ const Info = props => {
         <h2>
           {" "}
           {`
-        $ {
-          sunsetTime
-        }
+        ${sunsetTime}
         `}{" "}
         </h2>{" "}
       </div>{" "}

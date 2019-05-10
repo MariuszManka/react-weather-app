@@ -3,6 +3,7 @@ div.temp {
     grid-area: temp;
     text-align: center;
     font-size: 2rem;
+    margin-bottom: 5vh;
 }
 
 div.temp h2 {
