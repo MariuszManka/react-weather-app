@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Contact from "./Contact";
 
 import "./css/Hamburger.css";
 
@@ -9,9 +10,7 @@ class Hamburger extends Component {
 
   handleMenuClick = () => {
     const { err } = this.props;
-    // if (err === true) {
-    //   return;
-    // }
+
     this.setState(prevState => {
       return {
         isMenuActive: !prevState.isMenuActive
@@ -58,8 +57,9 @@ class Hamburger extends Component {
                   Find!{" "}
                 </button>{" "}
               </div>{" "}
+              <Contact />
             </form>{" "}
-            {err ? this.props.warning : null}{" "}
+            {err ? this.props.warning : null}
           </div>{" "}
         </nav>{" "}
       </>

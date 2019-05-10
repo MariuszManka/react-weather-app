@@ -167,9 +167,9 @@ input:valid~label {
 .bar:before,
 .bar:after {
     content: '';
-    height: 2px;
+    height: 3px;
     width: 0;
-    bottom: 1px;
+    bottom: -1px;
     position: absolute;
     background: var(--itemsColor);
     transition: 0.2s ease all;
@@ -194,7 +194,6 @@ input:focus~.bar:after {
 /* HIGHLIGHTER ================================== */
 .highlight {
     position: absolute;
-    height: 60%;
     width: 100px;
     top: 25%;
     left: 0;
@@ -221,12 +220,24 @@ button.applay {
     letter-spacing: 2px;
     border-radius: 5px;
     font-weight: bold;
-    transition: border-color 0.2s ease-out;
+    transition: border-color, transform 0.2s ease-out;
 }
 
 button.applay.shake {
     animation: shake .5s ease-out;
     border-color: #db1547;
+}
+
+div.Contact {
+    width: 20vw;
+    height: 12vh;
+    position: absolute;
+    bottom: 0;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5rem;
 }
 
 /* _____________________________________________ */
@@ -258,6 +269,21 @@ button.applay.shake {
         height: 4px;
     }
 
+
+    .bar:before,
+    .bar:after {
+
+        height: 2px;
+
+    }
+
+    div.Contact {
+        width: 50vw;
+        bottom: 0;
+        right: 0;
+        font-size: 2rem;
+    }
+
 }
 
 
@@ -265,6 +291,22 @@ button.applay.shake {
 @media (max-width: 320px) and (orientation: portrait) {
     .menu {
         font-size: 1.2rem;
+    }
+
+    input {
+
+        width: 220px;
+        margin: 0 auto;
+
+    }
+
+    label {
+        font-size: 1.6rem;
+    }
+
+    button.applay {
+        font-size: 1.1rem;
+
     }
 }
 
@@ -296,6 +338,108 @@ button.applay.shake {
 @media (max-width: 1500px) and (orientation: landscape) {
     .menu {
         font-size: 1.7rem;
+    }
+
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+
+    .menu {
+        width: 100vw;
+    }
+
+    input {
+
+        width: 550px;
+
+    }
+
+    label {
+        top: -45%;
+        font-size: 2.5rem;
+
+    }
+
+    .bar {
+
+        width: 550px;
+
+    }
+
+    button.applay {
+        font-size: 1.5rem;
+        padding: 15px 40px;
+        cursor: pointer;
+    }
+
+    input:focus~label,
+    input:valid~label {
+
+        font-size: 18px;
+
+    }
+
+    .Contact .fb svg,
+    .in svg,
+    .gthub svg,
+    .cdpen svg {
+        transition: all 0.5s cubic-bezier(.99, 0, .57, .94);
+    }
+
+    .Contact .fb svg:hover,
+    .in svg:hover,
+    .gthub svg:hover,
+    .cdpen svg:hover {
+        transform: rotate(360deg) scale(1.4);
+        color: var(--itemsColor)
+    }
+
+
+
+    button.applay:hover {
+        transform: scale(0.9);
+    }
+
+}
+
+@media(orientation: landscape) {
+    input {
+
+        width: 550px;
+
+    }
+
+    label {
+        top: -45%;
+        font-size: 2rem;
+    }
+
+    .bar {
+
+        width: 550px;
+
+    }
+
+
+    input:focus~label,
+    input:valid~label {
+
+        font-size: 15px;
+
+    }
+
+
+    button.applay {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+        cursor: pointer;
+    }
+
+    div.Contact {
+        width: 50vw;
+        bottom: 0%;
+        right: 0;
+        font-size: 1.5rem;
     }
 
 }

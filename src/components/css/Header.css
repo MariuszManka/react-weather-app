@@ -65,3 +65,12 @@ header.header h4 {
 
     }
 }
+
+@media(min-width: 1024px) and (orientation: landscape) {
+
+    header.header h1 {
+        font-size: 3rem;
+        margin-top: 5vh;
+    }
+
+}
