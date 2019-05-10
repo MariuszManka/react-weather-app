@@ -13,7 +13,7 @@ div.temp h2 {
 
 div.temp h2::after {
     content: '';
-    height: 1.5px;
+    height: 2px;
     display: block;
     grid-area: line;
     background-color: #95a5a6;
@@ -60,6 +60,27 @@ div.temp h2::after {
 
     .temp h1 {
         font-size: 3rem;
+    }
+
+
+}
+
+@media(orientation: landscape) and (min-width: 1024px) {
+
+    .temp h1 {
+        font-size: 3.5rem;
+    }
+
+    div.temp h2 {
+        display: block;
+        font-size: 2rem;
+
+
+    }
+
+    div.temp h2::after {
+        width: 25%;
+
     }
 
 

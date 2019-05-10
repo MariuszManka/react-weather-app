@@ -10,7 +10,6 @@
     "line line line"
     "sun wind pressure";
   height: 100vh;
-  /* overflow: hidden; */
 }
 
 .App.day {
@@ -36,4 +35,20 @@
     background-color: #040404;
     font-family: 'Montserrat', sans-serif;
   }
+
+}
+
+@media(min-width: 1024px) and (orientation: landscape) {
+  .App {
+    grid-template-areas:
+      "burger burger burger"
+      "header header header"
+      "image image image"
+      "temp temp temp"
+      "line line line"
+      "sun wind pressure";
+    grid-template-rows: 1% 1fr 30% 1fr 9px 1fr;
+
+  }
+
 }

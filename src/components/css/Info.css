@@ -100,3 +100,18 @@ div.night h4 {
 
 
 }
+
+@media(min-width: 1024px) and (orientation: landscape) {
+
+    div.sunrise,
+    div.wind,
+    div.pressure {
+        font-size: 1.2rem;
+    }
+
+    div.sunrise.night,
+    div.wind.night,
+    div.sunsetInfo.night {
+        font-size: 1.2rem;
+    }
+}

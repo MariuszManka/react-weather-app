@@ -44,7 +44,7 @@ div.secondCloud {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 14px 15px 78px -25px rgba(100, 100, 100, 0.75);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), 0 8px 8px rgba(0, 0, 0, 0.22);
 }
 
 /* ______________________________________________________________________ */
@@ -118,6 +118,27 @@ div.image.night {
     .night>.firstCloud {
         top: 60%;
         left: 30%;
+    }
+}
+
+@media(min-width: 1024px) and (orientation: landscape) {
+
+
+    div.firstCloud {
+        font-size: 1rem;
+    }
+
+    div.secondCloud {
+        font-size: 2.2rem;
+    }
+
+    .image.day>.sun {
+        width: 130px;
+        height: 130px;
+    }
+
+    .image.night .moon {
+        font-size: 6.5rem;
     }
 }
 
