@@ -19,13 +19,13 @@ const Image = props => {
   const nightBulid = (
     <div className={`image ${props.class} `}>
       <div className="firstCloud">
-        <FontAwesomeIcon icon={faCloud} className="cloud" size="5x" />
+        <FontAwesomeIcon icon={faCloud} className="cloud" size="4x" />
       </div>{" "}
       <div className="moon">
-        <FontAwesomeIcon icon={faMoon} className="moon" size="6x" />
+        <FontAwesomeIcon icon={faMoon} className="moon" size="5x" />
       </div>{" "}
       <div className="secondCloud">
-        <FontAwesomeIcon icon={faCloud} className="cloud" size="4x" />
+        <FontAwesomeIcon icon={faCloud} className="cloud" size="3x" />
       </div>{" "}
       <div className="sun" />
     </div>

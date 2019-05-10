@@ -113,7 +113,7 @@ div.burger:hover::after {
 /* form starting stylings ------------------------------- */
 .group {
     position: relative;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 input {

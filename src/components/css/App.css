@@ -24,7 +24,7 @@
 @media(orientation: landscape) {
   .App {
     display: grid;
-    grid-template-rows: 25% 34% 20% 1fr;
+    grid-template-rows: 1fr 25% 25% 1fr;
     grid-template-areas:
       "header header header"
       "image image image"
