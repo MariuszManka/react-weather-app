@@ -7,10 +7,10 @@ const Image = props => {
   const dayBulid = (
     <div className={`image ${props.class} `}>
       <div className="firstCloud">
-        <FontAwesomeIcon icon={faCloud} className="cloud" size="5x" />
+        <FontAwesomeIcon icon={faCloud} className="cloud" size="4x" />
       </div>{" "}
       <div className="secondCloud">
-        <FontAwesomeIcon icon={faCloud} className="cloud" size="4x" />
+        <FontAwesomeIcon icon={faCloud} className="cloud" size="3x" />
       </div>{" "}
       <div className="sun" />
     </div>

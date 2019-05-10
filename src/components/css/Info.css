@@ -8,6 +8,7 @@ div.sunrise {
 .wind,
 .pressure {
     background-color: #FBFBFB;
+    font-size: .9rem;
 }
 
 .sunrise.night,

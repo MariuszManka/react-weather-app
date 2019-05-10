@@ -36,8 +36,8 @@ div.secondCloud {
 }
 
 .image.day>.sun {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background-image: radial-gradient(circle, #f4b642, #f4c23a, #f2cf33, #eedc2d, #e7ea2a);
     position: absolute;

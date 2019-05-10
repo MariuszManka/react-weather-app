@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-rows: 10% 15% 34% 1fr 9px 1fr;
+  grid-template-rows: 10% 1fr 20% 1fr 9px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "burger burger burger"
@@ -9,7 +9,8 @@
     "temp temp temp"
     "line line line"
     "sun wind pressure";
-  min-height: 100vh;
+  height: 100vh;
+  /* overflow: hidden; */
 }
 
 .App.day {
@@ -23,7 +24,7 @@
 @media(orientation: landscape) {
   .App {
     display: grid;
-    grid-template-rows: 20% 34% 25% 1fr;
+    grid-template-rows: 25% 34% 20% 1fr;
     grid-template-areas:
       "header header header"
       "image image image"
