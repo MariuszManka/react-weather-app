@@ -83,7 +83,6 @@ div.burger:hover::after {
     position: absolute;
     list-style-type: none;
     top: 0;
-    bottom: -20vh;
     left: -100%;
     background-color: #040404;
     height: 100%;
