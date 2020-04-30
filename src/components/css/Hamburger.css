@@ -394,6 +394,10 @@ div.Contact {
         color: var(--itemsColor)
     }
 
+    div.Contact a {
+        font-size: 2.5rem;
+    }
+
 
 
     button.applay:hover {

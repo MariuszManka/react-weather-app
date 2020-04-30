@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import "./css/App.css";
-import Header from "./Header";
-import Info from "./Info";
-import Image from "./Image";
-import Temperature from "./Temperature";
-import Hamburger from "./Hamburger";
+import React, { Component } from "react"
+import "./css/App.css"
+import Header from "./Header"
+import Info from "./Info"
+import Image from "./Image"
+import Temperature from "./Temperature"
+import Hamburger from "./Hamburger"
 
-const API_key = "288f6eab4f8a85fc1c207e194d70f482";
+const API_key = "288f6eab4f8a85fc1c207e194d70f482"
 
 class App extends Component {
   state = {
@@ -27,19 +27,19 @@ class App extends Component {
   componentDidMount() {
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${
       this.state.city
-    }&APPID=${API_key}&units=metric`;
+      }&APPID=${API_key}&units=metric`
 
     fetch(API)
       .then(response => {
         if (response.ok) {
-          return response;
+          return response
         }
 
-        throw Error(response.statusText);
+        throw Error(response.statusText)
       })
       .then(response => response.json())
       .then(data => {
-        const time = new Date().toLocaleDateString();
+        const time = new Date().toLocaleDateString()
 
         // const city = this.state.firstLoad ? "Lubliniec" : this.state.value;
         this.setState({
@@ -51,38 +51,38 @@ class App extends Component {
           pressure: data.main.pressure.toFixed(),
           weather: data.weather[0].description,
           value: ""
-        });
+        })
       })
       .catch(error => {
-        console.log(error);
+        console.log(error)
         this.setState(prevState => ({
           error: true,
           city: "Warszawa",
           value: ""
-        }));
-      });
+        }))
+      })
   }
 
   //____________________PONOWNE WYSZUKIWANIE MIASTA TYM RAZEM PO VALUE______________________________//
 
   handleCityChange = e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${
       this.state.value
-    }&APPID=${API_key}&units=metric`;
+      }&APPID=${API_key}&units=metric`
 
     fetch(API)
       .then(response => {
         if (response.ok) {
-          return response;
+          return response
         }
 
-        throw Error(response.statusText);
+        throw Error(response.statusText)
       })
       .then(response => response.json())
       .then(data => {
-        const time = new Date().toLocaleDateString();
+        const time = new Date().toLocaleDateString()
         this.setState(prevState => {
           return {
             city: prevState.value,
@@ -94,27 +94,27 @@ class App extends Component {
             pressure: data.main.pressure.toFixed(),
             weather: data.weather[0].description,
             value: ""
-          };
-        });
+          }
+        })
       })
       .catch(error => {
         this.setState(prevState => ({
           error: true,
           value: ""
-        }));
-      });
+        }))
+      })
   };
 
   handleInputChange = e => {
     this.setState({
       value: e.target.value
-    });
+    })
   };
 
   render() {
-    const actualTime = new Date().getTime() / 1000; //Pobieranie aktualnej daty jako liczby minisekund
+    const actualTime = new Date().getTime() / 1000 //Pobieranie aktualnej daty jako liczby minisekund
 
-    const { temp, isMenuActive, value, sunset, weather, error } = this.state; //Destrukturyzacja
+    const { temp, isMenuActive, value, sunset, weather, error } = this.state //Destrukturyzacja
 
     const dayBulid = (
       <div className="App day">
@@ -129,7 +129,7 @@ class App extends Component {
         <Temperature info={temp} weatherStatus={weather} class={"day"} />{" "}
         <Info info={this.state} class={"day"} />{" "}
       </div>
-    );
+    )
 
     const nightBulid = (
       <div className="App night">
@@ -146,13 +146,13 @@ class App extends Component {
         <Temperature info={temp} weatherStatus={weather} class={"night"} />{" "}
         <Info info={this.state} class={"night"} />{" "}
       </div>
-    );
+    )
     if (actualTime <= sunset) {
-      return <> {dayBulid} </>;
+      return <> {dayBulid} </>
     } else {
-      return <> {nightBulid} </>;
+      return <> {nightBulid} </>
     }
   }
 }
 
-export default App;
+export default App
